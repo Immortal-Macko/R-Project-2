@@ -1,0 +1,7 @@
+data <- read.csv("data_ex-07.csv",stringsAsFactors = F,row.names = 1)
+m.data <- cbind(data$Образование,data$Здравоохранение,data$Соц.политика)
+colnames(m.data) <- c('Образование','Здравоохранение','Соц Политика')
+png(filename = 'plot-ex07.png',bg ='transparent', width = 600)
+barplot(m.data, col = rainbow(4))
+legend("topright", legend = c('2005','2010','2013','2017'),fill = rainbow(4))
+dev.off()
